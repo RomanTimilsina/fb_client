@@ -51,13 +51,13 @@ const Post = ({ post }) => {
           <div className="userInfo">
             <img src={post.profilePic} alt="" />
             <div className="details">
-              <Link
-                to={`/profile/${post.userId}`}
+              <a
+                href={`/profile/${post.userId}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <span className="name">{post.name}</span>
-              </Link>
-              <span className="date">{moment(post.createdAt).fromNow()}</span>
+              </a>
+              <span className = "date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
           <MoreHorizIcon />
@@ -92,6 +92,8 @@ const Post = ({ post }) => {
 };
 
 export default Post;
+
+
 
 
 
