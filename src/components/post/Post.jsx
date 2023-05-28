@@ -21,6 +21,7 @@ const Post = ({ post }) => {
   const { isLoading, error, data } = useQuery(['likes',post.id], () =>
   makeRequest.get('/likes?postId=' + post.id).then((res) => {
     if (isLoading) return null 
+    console.log(res.data)
     return res.data
   }),{
     placeholderData: "loading"
@@ -43,7 +44,7 @@ const Post = ({ post }) => {
   const handleClick = () => {
     mutation.mutate(data.includes(currentUser.id))
   }
-
+console.log(post)
   return (
     <div className="post">
       <div className="container">
